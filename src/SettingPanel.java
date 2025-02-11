@@ -4,7 +4,10 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+
 import net.miginfocom.swing.MigLayout;
+import src.database.*;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
@@ -16,7 +19,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.border.LineBorder;
-import src.database.*;
 import javax.swing.JTextPane;
 
 public class SettingPanel extends JPanel implements ActionListener

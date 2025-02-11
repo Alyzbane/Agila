@@ -6,9 +6,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 import javax.swing.*;
+
+import src.database.*;
 import src.utils.WindowUtils;
 import static src.utils.WindowUtils.switchPanel;
-import src.database.*;
+
 import javax.swing.border.LineBorder;
 
 public class Dashboard extends JFrame implements ActionListener

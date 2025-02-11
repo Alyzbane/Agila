@@ -2,9 +2,10 @@ package src;
 import java.awt.*;
 import java.awt.event.*;
 
-import src.database.*;
 import src.utils.WindowUtils;
 import src.UI.PassFieldFocusAdapter;
+import src.database.*;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 

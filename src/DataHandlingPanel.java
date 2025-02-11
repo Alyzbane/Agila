@@ -8,8 +8,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javax.swing.*;
-import src.database.*;
+
 import src.UI.*;
+import src.database.*;
+
 import java.util.*;
 import src.utils.*;
 import static src.utils.Oras.*;

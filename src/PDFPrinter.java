@@ -1,20 +1,16 @@
 package src;
 
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.AreaBreak;
-import com.itextpdf.layout.element.Cell;
-import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.properties.AreaBreakType;
-import com.itextpdf.layout.properties.HorizontalAlignment;
-import com.itextpdf.layout.properties.TextAlignment;
-
-import src.UI.IntervalGroupedTableModel;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.table.TableModel;
+
+import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.layout.*;
+import com.itextpdf.layout.element.*;
+import com.itextpdf.layout.properties.*;
+
+import src.UI.IntervalGroupedTableModel;
 
 public class PDFPrinter
 {
@@ -24,10 +20,11 @@ public class PDFPrinter
 	    // Create a new document
 	    PdfDocument pdfDoc = null;
 	    try {
-	        pdfDoc = new PdfDocument(new PdfWriter(fileName));
-	    } catch (FileNotFoundException e) {
-	        e.printStackTrace();
-	    }
+			pdfDoc = new PdfDocument(new PdfWriter(fileName));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    Document doc = new Document(pdfDoc);
 	    float wd = 1000f; //width of tables in the document maximized
 	    // Create a table to hold the data
@@ -61,7 +58,7 @@ public class PDFPrinter
 	    PdfDocument pdfDoc = null;
 	    try {
 	        pdfDoc = new PdfDocument(new PdfWriter(fileName));
-	    } catch (FileNotFoundException e) {
+	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
 

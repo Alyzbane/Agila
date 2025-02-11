@@ -1,8 +1,8 @@
 package src;
 
-import src.database.DbConn;
 import src.utils.WindowUtils;
 import src.UI.PassFieldFocusAdapter;
+import src.database.DbConn;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -151,7 +151,10 @@ public class LoginWindow extends JFrame implements ActionListener
 		_conn = new DbConn();
 		_conn.oopen();
 		setVisible(true);
-		if(_conn.sessionCheck()) createDashBoard();
+		if(_conn.sessionCheck())
+		{
+			createDashBoard();
+		}
 		_conn.cclose();
 	}
 	public void createDashBoard()

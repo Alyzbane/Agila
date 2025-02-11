@@ -19,8 +19,8 @@ public class DbConn
 	{
 		conn = null;
 		url = "jdbc:mysql://localhost:3306/agila";
-		_user = "root";
-		_password = "";
+		_user = "appuser";
+		_password = "123";
 	}
 
 	public DbConn(String url, String usr, String pwd)

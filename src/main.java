@@ -11,7 +11,7 @@ public class  main
 {
 	public static void main(String[] args)
 	{
-		new SplashScr(2000);
+		new SplashScr(2000);		
 		LoginWindow reg = new LoginWindow();
 	}
 }

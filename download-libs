@@ -1,0 +1,60 @@
+#!/bin/bash
+set -e
+
+# Create the libs directory if it doesn't exist
+mkdir -p libs
+
+############################################
+# iText-Core-9.0.0-only-jars
+############################################
+if [ ! -d "libs/iText-Core-9.0.0-only-jars" ]; then
+    echo "Downloading iText-Core-9.0.0-only-jars..."
+    wget -O libs/iText-Core-9.0.0-only-jars.zip "https://github.com/itext/itext-java/releases/download/9.0.0/iText-Core-9.0.0-only-jars.zip"
+    
+    echo "Extracting iText-Core-9.0.0-only-jars..."
+    unzip -d libs/iText-Core-9.0.0-only-jars libs/iText-Core-9.0.0-only-jars.zip
+    
+    rm libs/iText-Core-9.0.0-only-jars.zip
+fi
+
+############################################
+# jCalendar-1.4
+############################################
+if [ ! -d "libs/jcalendar-1.4" ]; then
+    echo "Downloading jCalendar-1.4..."
+    wget -O libs/jcalendar-1.4.zip "https://www.toedter.com/download/jcalendar-1.4.zip"
+    
+    echo "Extracting jCalendar-1.4..."
+    unzip -d libs/jcalendar-1.4 libs/jcalendar-1.4.zip
+    
+    rm libs/jcalendar-1.4.zip
+fi
+
+############################################
+# Apache POI (poi-bin-5.2.3)
+############################################
+if [ ! -d "libs/poi-bin-5.2.3" ]; then
+    echo "Downloading Apache POI bin (poi-bin-5.2.3)..."
+    wget -O libs/poi-bin-5.2.3.zip "https://archive.apache.org/dist/poi/release/bin/poi-bin-5.2.3-20220909.zip"
+    
+    echo "Extracting Apache POI bin..."
+    unzip -d libs/poi-bin-5.2.3 libs/poi-bin-5.2.3.zip
+    
+    rm libs/poi-bin-5.2.3.zip
+fi
+
+############################################
+# MySQL Connector/J 9.2.0
+############################################
+if [ ! -d "libs/mysql-connector-j-9.2.0" ]; then
+    echo "Downloading MySQL Connector/J 9.2.0..."
+    wget -O libs/mysql-connector-j-9.2.0.tar.gz "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.2.0.tar.gz"
+    
+    echo "Extracting MySQL Connector/J 9.2.0..."
+    mkdir -p libs/mysql-connector-j-9.2.0
+    tar -xzf libs/mysql-connector-j-9.2.0.tar.gz -C libs/mysql-connector-j-9.2.0 --strip-components=1
+    
+    rm libs/mysql-connector-j-9.2.0.tar.gz
+fi
+
+echo "All libraries have been downloaded and extracted successfully."
